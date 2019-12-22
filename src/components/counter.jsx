@@ -7,6 +7,11 @@ class Counter extends Component {
     //imageUrl: "https://picsum.photos/200"
   };
 
+  //using arrow function is cleaner than using custom constructor and rebinding events
+  handleIncrement = () => {
+    console.log("Increment clicked!", this);
+  };
+
   renderTags() {
     if (this.state.tags.length === 0) return <p>Hey, there are no tags</p>;
     return (
@@ -16,10 +21,6 @@ class Counter extends Component {
         ))}
       </ul>
     );
-  }
-
-  handleIncrement() {
-    console.log("Increment clicked!");
   }
 
   render() {
